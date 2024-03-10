@@ -110,15 +110,15 @@ a {
 	font-size: 80px;
 	line-height: 100%;
 	font-weight: 600;
-	letter-spacing: -3px;
-}
-a.h400 {
-	text-underline-offset: 6px;
-	text-decoration: underline 5px solid var(--greige);
+  letter-spacing: -3px;
 }
 
-a:hover {
-	text-decoration-color: var(--fg-primary);
+.companyRow a {
+  text-underline-offset: 6px;
+  text-decoration: underline 5px solid var(--greige);
+  &:hover {
+    text-decoration-color: var(--fg-primary);
+  }
 }
 
 .h300 {
@@ -171,12 +171,12 @@ a:hover {
 	justify-content: flex-end;
 	gap: 8px;
 }
-ul.h200.links a {
-	text-decoration-color: var(--greige);
-}
 
-ul.h200.links a:hover {
-	text-decoration-color: var(--fg-primary);
+.link-list a {
+	text-decoration-color: var(--greige);
+  &:hover{
+    text-decoration-color: var(--fg-primary);
+  }
 }
 
 .companies {
@@ -268,6 +268,7 @@ ul.h200.links a:hover {
 .date {
 	font-family: "Courier New", Courier, monospace;
 	margin-bottom: 2px;
+  font-weight: normal;
 }
 
 .container-switch {
