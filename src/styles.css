@@ -1,0 +1,394 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+	margin: 0;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+	font-weight: normal;
+	font-size: 100%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]),
+a {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
+	text-underline-offset: 2px;
+}
+
+/* END CSS RESET*/
+
+@keyframes slide {
+	0% {
+		transform: translateX(-20px);
+		opacity: 0;
+	}
+	50% {
+		transform: translateX(-10px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-up {
+	from {
+		transform: translateY(50%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.App {
+	font-family: var(--ff-pri), sans-serif;
+	font-size: 13px;
+	color: var(--fg-primary);
+	background-color: var(--bg-canvas);
+}
+.grid {
+	display: grid;
+	grid-template-columns: 64px 115px 1fr 1fr 115px 64px;
+	grid-template-rows: 64px minmax(0, 500px) minmax(0, 500px) 128px; /* 64px 1fr 1fr 128px */
+	height: 100vh;
+	width: 100vw;
+}
+
+.secondary {
+	color: var(--fg-secondary);
+}
+
+.h400 {
+	font-size: 80px;
+	line-height: 100%;
+	font-weight: 600;
+	letter-spacing: -3px;
+}
+a.h400 {
+	text-underline-offset: 6px;
+	text-decoration: underline 5px solid var(--greige);
+}
+
+a:hover {
+	text-decoration-color: var(--fg-primary);
+}
+
+.h300 {
+	font-size: 24px;
+	line-height: 1.2;
+}
+
+.h200 {
+	font-size: 16px;
+}
+
+.conditions-rotate {
+	writing-mode: vertical-lr;
+	margin-top: var(--mg-top);
+}
+
+.forecast {
+	display: flex;
+	gap: 10px;
+	margin-left: 16px;
+}
+
+.forecast > span:nth-child(1) {
+	animation: 300ms ease-out 1s slide;
+	animation-fill-mode: backwards;
+}
+
+.forecast > span:nth-child(2) {
+	animation: 500ms ease-out 1s slide;
+	animation-fill-mode: backwards;
+}
+
+.forecast > span:nth-child(3) {
+	animation: 800ms ease-out 1s slide;
+	animation-fill-mode: backwards;
+}
+
+.title {
+	grid-column: 3 / span 1;
+	grid-row: 2 / span 1;
+}
+
+.links {
+	grid-column: 4 / span 1;
+	grid-row: 2 / span 1;
+}
+
+.link-list {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+}
+ul.h200.links a {
+	text-decoration-color: var(--greige);
+}
+
+ul.h200.links a:hover {
+	text-decoration-color: var(--fg-primary);
+}
+
+.companies {
+	grid-column: 3 / span 2;
+	grid-row: 3 / span 1;
+	display: flex;
+}
+.companiesList {
+	display: inline-flex;
+	justify-content: end;
+	flex-direction: column;
+}
+.companyRow {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	/* justify-content: space-between; for a grid*/
+	align-items: flex-end;
+	gap: 16px;
+	position: relative;
+	animation-fill-mode: backwards;
+}
+
+.companyRow:nth-child(1) {
+	animation: 500ms ease-out 0ms slide-up;
+	animation-fill-mode: backwards;
+}
+
+.companyRow:nth-child(2) {
+	animation: 500ms ease-out 300ms slide-up;
+	animation-fill-mode: backwards;
+}
+.companyRow:nth-child(3) {
+	animation: 500ms ease-out 600ms slide-up;
+	animation-fill-mode: backwards;
+}
+.companyRow:nth-child(4) {
+	animation: 500ms ease-out 900ms slide-up;
+	animation-fill-mode: backwards;
+}
+
+.location {
+	grid-column: 6 / span 1;
+	grid-row: 1 / span 5;
+}
+
+.location-rotate {
+	writing-mode: vertical-lr;
+	margin-left: 16px;
+	margin-top: var(--mg-top);
+	animation: 500ms ease-out 1.5s slide;
+	animation-fill-mode: backwards;
+}
+
+.conditions {
+	grid-column: 1;
+	grid-row: 1 / span 4;
+}
+
+.top-spacer {
+	grid-column: 2 / span 4;
+	grid-row: 1 / span 1;
+	border-bottom: var(--dash);
+}
+
+.end-spacer {
+	grid-column: 2 / span 4;
+	grid-row: 4 / span 1;
+	border-top: var(--dash);
+}
+
+.start-carpet {
+	grid-column: 2;
+	border-left: var(--dash);
+}
+
+.end-carpet {
+	grid-column: 5;
+	border-right: var(--dash);
+}
+
+.carpet {
+	background-image: url(img/lines.png);
+	background-repeat: repeat;
+	opacity: var(--carpet-opacity);
+	grid-row: 1 / span 5;
+}
+
+.date {
+	font-family: "Courier New", Courier, monospace;
+	margin-bottom: 2px;
+}
+
+.container-switch {
+	grid-column: 5;
+	grid-row: 1;
+	z-index: 1;
+	display: flex;
+	align-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+input[type="checkbox"] {
+	width: 0;
+	height: 0;
+	display: contents;
+	visibility: hidden;
+}
+
+label {
+	width: 72px;
+	height: 40px;
+	display: block;
+	background-color: var(--bg-canvas);
+	border-radius: 100px;
+	position: relative;
+	cursor: pointer;
+	transition: 0.5s;
+	box-shadow: 0 0 20px #477a8550;
+}
+label::after {
+	content: "🌞";
+	font-size: 22px;
+	width: 32px;
+	height: 32px;
+	background-color: var(--newsprint);
+	position: absolute;
+	top: 4px;
+	left: 6px;
+	border-radius: 70px;
+	transition: 0.5s;
+	text-align: center;
+	line-height: 1.5;
+	box-shadow: 0px 2px 9px -1px rgba(0, 0, 0, 0.3);
+}
+
+input:checked + label:after {
+	left: calc(100% - 6px);
+	transform: translateX(-100%);
+	background-color: #000;
+	content: "🌙";
+}
+
+input:checked + label {
+	background-color: darkslateblue;
+}
+
+label:active:after {
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.6);
+	/* width: calc(100% - 24px); */
+}
+
+/*mobile*/
+
+@media (width <= 700px) {
+	/* … */
+	.grid {
+		grid-template-columns: 1px 64px 1fr 1fr 64px 1px;
+		grid-template-rows: 64px 1fr 1fr 64px 128px;
+	}
+
+	.h400 {
+		font-size: 40px;
+		letter-spacing: -0.5px;
+	}
+	.h300 {
+		font-size: 18px;
+	}
+	.start-carpet {
+		border-right: var(--dash);
+	}
+	.end-carpet {
+		border-left: var(--dash);
+	}
+
+	.container-switch {
+		grid-column: 3 / span 2;
+		grid-row: 5;
+		justify-content: start;
+	}
+
+	.companiesList {
+		justify-content: start;
+	}
+
+	.conditions {
+		grid-column: 3 / span 3;
+		grid-row: 5;
+		color: var(--fg-secondary);
+	}
+
+	.conditions-rotate {
+		writing-mode: horizontal-tb;
+	}
+
+	.forecast {
+		margin-left: 0px;
+	}
+	.location {
+		grid-column: 3 / span 2;
+		grid-row: 4;
+		display: flex;
+	}
+
+	.location-rotate {
+		writing-mode: horizontal-tb;
+		margin-left: 0px;
+		margin-top: 32px;
+		justify-content: end;
+	}
+}
+
+/*END MOBILE*/
