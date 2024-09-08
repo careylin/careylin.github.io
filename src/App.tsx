@@ -34,7 +34,7 @@ export default function App() {
 				</div>
 
 				<span className="top-spacer" />
-				<div className="title h300">
+				<div className="title h200">
 					<h1>Carey Spies</h1>
 					<h2 className="secondary">Design Systems</h2>
 					<h2 className="secondary">Product Design</h2>
@@ -48,30 +48,42 @@ export default function App() {
 				</div>
 				<div className="companies">
 					<ul className="companiesList">
-						<div className="companyRow">
-							<a href="https://www.alltrails.com" className="h400">
-								AllTrails
+					<div className="projectRow">
+							<a href="https://www.alltrails.com" className="h300">
+								Quest
 							</a>
-							<span className="h200 date">2022–now</span>
-						</div>
-						<div className="companyRow">
-							<a href="https://www.rover.com" className="h400">
-								Rover
-							</a>
-							<span className="h200 date">2018–2022</span>
-						</div>
-						<div className="companyRow">
-							<a href="https://www.redfin.com" className="h400">
-								Redfin
-							</a>
-							<span className="h200 date">2014–2018</span>
-						</div>
-						<div className="companyRow">
-							<a href="https://www.squarespace.com" className="h400 secondary">
-								etc...
-							</a>
-							<span className="h200 date">2011–2014</span>
-						</div>
+							<span className="h200 date">Presently</span>
+					</div>
+					<div className="projectRow">
+						<a href="https://www.alltrails.com" className="h300">
+							Denali Design System
+						</a>
+						<span className="h200 date">Presently</span>
+					</div>
+					<div className="projectRow">
+						<a href="https://www.alltrails.com" className="h300">
+							AllTrails Denali Launch
+						</a>
+						<span className="h200 date">2022</span>
+					</div>
+					<div className="projectRow">
+						<a href="https://www.alltrails.com" className="h300">
+							Rover Sitter Profile
+						</a>
+						<span className="h200 date">2021</span>
+					</div>
+					<div className="projectRow">
+						<a href="https://www.alltrails.com" className="h300">
+							Sitter Tools
+						</a>
+						<span className="h200 date">2021</span>
+					</div>
+					<div className="projectRow">
+						<a href="https://www.alltrails.com" className="h300">
+							Kibble Design System
+						</a>
+						<span className="h200 date">2020</span>
+					</div>
 					</ul>
 				</div>
 				<div className="start-carpet carpet" />

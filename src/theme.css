@@ -1,10 +1,10 @@
-@font-face {
-    font-family: "Manrope";
+/* @font-face {
+    font-family: "NB International Pro";
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/manrope/v13/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk79FN_C-bnTfc7AGrY.woff2)
       format("woff2");
-}
+} */
 
 :root {
     --black: #101010;
@@ -14,7 +14,7 @@
     --newsprint: #f4f3f1;
     --white: white;
     
-    --ff-pri:"Manrope";
+    --ff-pri:"NB International Pro";
     --mg-top:64px;
   }
 
