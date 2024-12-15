@@ -9,14 +9,14 @@ const withMDX = createMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // Enable static exports
-  distDir: 'docs',   // Change output directory to docs
+  output: 'export',
+  distDir: 'docs',
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  basePath: process.env.NODE_ENV === 'production' ? '/careylin.github.io' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/careylin.github.io/' : '',
+  basePath: '',
+  assetPrefix: '',
 };
 
 export default withMDX(nextConfig); 
