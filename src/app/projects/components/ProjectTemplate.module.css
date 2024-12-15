@@ -1,0 +1,130 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+} 
+
+.grid {
+  display: grid;
+  grid-template-columns: 64px 115px 1fr 1fr 115px 64px;
+  grid-template-rows: 64px 100px 1fr 64px;
+  /* height: 100vh; */
+  width: 100vw;
+}
+
+.title {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.content {
+  grid-column: 3 / span 2;
+  grid-row: 3;
+  max-width: 42em;
+  margin: 0 auto;
+}
+
+.content :global(h1) {
+  font-size: clamp(1.5rem, 0.4877rem + 4.3192vw, 4.375rem);
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.content :global(h2) {
+    font-size: var(--fontSize-m);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+.content :global(h3) {
+  font-size: var(--fontSize-s);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.content :global(p) {
+  font-size: var(--fontSize-s);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: var(--fg-primary);
+}
+
+.content :global(hr) {
+    margin-block: 2rem;
+    border: 0;
+    border-bottom: 1px dashed var(--fg-subtle);
+  }
+
+.content :global(ul) {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.content :global(strong) {
+    font-weight: 600;
+  }
+
+.content :global(li) {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg-secondary);
+}
+
+.content :global(li)::before {
+    content: "☞";
+    font-size: 22px;
+    position: absolute;
+    left: -10px;
+    color: var(--fg-primary);
+    line-height: 1;
+    font-weight: bold;
+}
+
+.startCarpet {
+  grid-column: 2;
+  border-left: var(--dash);
+  background-image: url(../../img/lines.png);
+  background-repeat: repeat;
+  opacity: var(--carpet-opacity);
+  grid-row: 1 / span 5;
+}
+
+.endCarpet {
+  grid-column: 5;
+  border-right: var(--dash);
+  background-image: url(../../img/lines.png);
+  background-repeat: repeat;
+  opacity: var(--carpet-opacity);
+  grid-row: 1 / span 5;
+}
+
+.topSpacer {
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 1;
+  border-bottom: var(--dash);
+}
+
+.endSpacer {
+  grid-column: 2 / span 4;
+  border-top: var(--dash);
+}
+
+@media (width <= 700px) {
+  .grid {
+    grid-template-columns: 1px 64px 1fr 1fr 64px 1px;
+    grid-template-rows: 64px 64px 1fr 64px 128px;
+  }
+
+  .startCarpet {
+    border-right: var(--dash);
+  }
+
+  .endCarpet {
+    border-left: var(--dash);
+  }
+} 
