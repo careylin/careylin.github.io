@@ -1,0 +1,27 @@
+.back-link {
+  grid-column: 2 / span 10;
+}
+
+.back-link a {
+  color: var(--fg-secondary);
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  color: var(--fg-primary);
+}
+
+.project-content {
+    grid-column: 3 / span 2;
+    grid-row: 3;
+  color: var(--fg-primary);
+  text-align: center;
+  animation: 500ms ease-out 0ms slide-up;
+  animation-fill-mode: backwards;
+}
+
+.project-content p {
+  max-width: 640px;
+  line-height: 1.5;
+  text-align: center;
+} 
