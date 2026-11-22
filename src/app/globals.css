@@ -1,21 +1,39 @@
+@font-face {
+  font-family: "Jacquard 24";
+  src:
+    url("./fonts/Jacquard24-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Yarndings 12";
+  src:
+    url("./fonts/Yarndings12-Regular.ttf") format("ttf");
+}
+
 /* Custom properties - Theme variables */
 :root {
   /* Colors */
-  --black: #101010;
-  --coal: #202020;
+  --black: #10171D;
+  --coal: #2C3644;
   --ink: #303030;
+  --wisp: #DFEADE;
+  --sage: #ADDAB2;
+  --moss: #5F7968;
   --charcoal: #7B7B7B;
+  --mediano: #9b9b9b;
   --greige: #DADADA;
   --newsprint: #f4f3f1;
   --white: white;
+  --purple-base: #9E8DD4;
 
   /* Layout */
   --mg-top: 64px;
-  
+
   /* Theme tokens */
   --fg-primary: var(--ink);
   --fg-secondary: var(--charcoal);
-  --fg-subtle: rgba(0, 0, 0, 0.3);
+  --fg-subtle: var(--mediano);
+  --fg-accent: var(--purple-base);
 
   --bg-canvas: var(--newsprint);
   --bg-primary: var(--white);
@@ -23,10 +41,12 @@
   --bg-subtle-hover: rgba(0, 0, 0, 0.1);
   --bg-subtle-active: rgba(0, 0, 0, 0.15);
   --neushadow: 3px 3px 6px var(--bg-subtle),
-  -3px -3px 6px var(--bg-primary);
+    -3px -3px 6px var(--bg-primary);
 
   --dash: 1px dashed var(--greige);
   --carpet-opacity: 1;
+
+  --link-accent:var(--greige);
 
   --fontSize-s: 16px;
   --fontSize-m: 20px;
@@ -34,14 +54,18 @@
   --fontSize-xl: 36px;
   --fontSize-2xl: 48px;
   --fontSize-3xl: 60px;
+
+  --font-jacquard: "Jacquard 24";
+  --font-yarn: "Yarndings 12";
 }
 
 /* Theme variations */
 @media (prefers-color-scheme: dark) {
   :root {
-    --fg-primary: var(--greige);
-    --fg-secondary: var(--charcoal);
-    --fg-subtle: rgba(255, 255, 255, 0.3);
+    --fg-primary: var(--wisp);
+    --fg-secondary: var(--sage);
+    --fg-subtle: var(--moss);
+    --fg-accent: var(--purple-base);
 
     --bg-canvas: var(--black);
     --bg-primary: var(--coal);
@@ -52,14 +76,17 @@
     --neushadow: 0;
 
     --dash: 1px dashed var(--ink);
-    --carpet-opacity: .2;
+    --carpet-opacity: .1;
+
+    --link-accent:var(--purple-base);
   }
 }
 
-[data-theme="light"] { 
+[data-theme="light"] {
   --fg-primary: var(--ink);
   --fg-secondary: var(--charcoal);
-  --fg-subtle: rgba(0, 0, 0, 0.3);
+  --fg-subtle: var(--mediano);
+  --fg-accent: var(--purple-base);
 
   --bg-canvas: var(--newsprint);
   --bg-primary: var(--white);
@@ -67,16 +94,19 @@
   --bg-subtle-hover: rgba(0, 0, 0, 0.1);
   --bg-subtle-active: rgba(0, 0, 0, 0.15);
   --neushadow: 3px 3px 6px var(--bg-subtle),
-  -3px -3px 6px var(--bg-primary);
+    -3px -3px 6px var(--bg-primary);
 
   --dash: 1px dashed var(--greige);
   --carpet-opacity: 1;
+
+  --link-accent:var(--greige);
 }
 
-[data-theme="dark"] {      
-  --fg-primary: var(--greige);
-  --fg-secondary: var(--charcoal);
-  --fg-subtle: rgba(255, 255, 255, 0.3);
+[data-theme="dark"] {
+  --fg-primary: var(--wisp);
+  --fg-secondary: var(--sage);
+  --fg-subtle: var(--moss);
+  --fg-accent: var(--purple-base);
 
   --bg-canvas: var(--black);
   --bg-primary: var(--coal);
@@ -87,8 +117,12 @@
   --neushadow: 0;
 
   --dash: 1px dashed var(--ink);
-  --carpet-opacity: .2;
+  --carpet-opacity: .1;
+
+  --link-accent:var(--purple-base);
 }
+
+
 
 /* Reset */
 *,
@@ -120,6 +154,8 @@ body {
 }
 
 /* Typography */
+
+
 h1,
 h2,
 h3,
@@ -128,6 +164,7 @@ h4 {
   font-weight: normal;
   font-size: 100%;
 }
+
 
 /* Remove default margin for text elements */
 body,
@@ -155,7 +192,7 @@ ol[role="list"] {
 /* Links */
 a:not([class]),
 a {
-	color: currentColor;
+  color: currentColor;
   text-decoration-skip-ink: auto;
   text-underline-offset: 2px;
 }
