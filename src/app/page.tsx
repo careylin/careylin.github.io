@@ -25,8 +25,8 @@ export default function Home() {
 				<span className={styles.topSpacer} />
 				<div className={styles.title}>
 					<h1 className={styles.primary}>Carey Spies</h1>
-					<h2 className={styles.secondary}>Design Systems</h2>
-					<h2 className={styles.secondary}>Product Design</h2>
+					<h2 className={styles.tertiary}>Design Systems</h2>
+					<h2 className={styles.tertiary}>Product Design</h2>
 				</div>
 				<div className={styles.links}>
 					<ul className={styles.linkList}>
